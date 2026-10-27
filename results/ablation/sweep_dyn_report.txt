@@ -1,0 +1,31 @@
+100 rows: 100 OK, 0 failed
+
+cycles/frame: unique [np.int64(5964464)]  (data-independent if one value)
+
+              mean  median      p1     min   worst-max-LSB
+vs quant     47.47   47.33   46.01   45.62   7   (PSNR dB)
+          pooled-RMSE PSNR 47.39 dB, >2LSB mean 3.34%
+vs fp32      38.56   38.44   37.65   37.55   25   (PSNR dB)
+          pooled-RMSE PSNR 38.51 dB, >2LSB mean 33.04%
+
+worst 10 (vs fp32):
+  Places365_val_00017379         fp  37.55  q  47.01  max 16
+  Places365_val_00020321         fp  37.65  q  46.32  max 17
+  Places365_val_00025860         fp  37.70  q  47.16  max 19
+  Places365_val_00013928         fp  37.73  q  47.03  max 18
+  Places365_val_00019843         fp  37.76  q  47.63  max 17
+  Places365_val_00004857         fp  37.76  q  47.16  max 17
+  Places365_val_00006075         fp  37.76  q  47.08  max 19
+  Places365_val_00019130         fp  37.77  q  46.82  max 19
+  Places365_val_00007911         fp  37.77  q  47.56  max 19
+  Places365_val_00028667         fp  37.78  q  47.24  max 16
+
+requant points:  S  | worst need | margin | images clamped | total clamps
+  l1_RQ_ACC  (no RQ lines in sim log)
+  l2_RQ_IN   (no RQ lines in sim log)
+  l2_RQ_ACC  (no RQ lines in sim log)
+  l3_RQ_IN   (no RQ lines in sim log)
+  l3_RQ_ACC  (no RQ lines in sim log)
+  res_RQ_ACC (no RQ lines in sim log)
+
+saved results/ablation/sweep_dyn_report.png

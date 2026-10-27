@@ -1,0 +1,78 @@
+# ---- waveforms & sim output (NO leading spaces) ----
+*.vcd
+*.fst
+*.wlf
+obj_dir/
+transcript
+vsim.wlf
+
+# ---- Quartus ----
+db/
+incremental_db/
+output_files/
+*.qws
+*.sof
+*.pof
+synth/top_full/archive/
+
+synth/**/data_files
+synth/**/simulation/
+*pin_model_dump.txt
+
+# ---- Questa / gate-level ----
+**/simulation/questa/work/
+*.vo
+*.sdo
+*.sft
+*_dump_all_vcd_nodes.tcl
+*.qpg
+*.qdb
+*.qtl
+**/data_files/full_sys_st.hex
+
+# ---- ModelSim ----
+modelsim.ini
+*.mti
+*.dbg
+
+# ---- generated data (regenerable, keep out of git) ----
+data_files/rom_*.hex
+data_files/image.hex
+data_files/full_*.hex
+data_files/capture_*.hex
+data_files/*_dut*.hex
+data_files/*.png
+data_files/compare/*.png
+data_files/dut_out/
+data_files/golden_cache/
+data_files/test_images/
+
+# ---- Python / OS ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.log
+
+*.pdf
+*.vvp
+*.out
+*.bak
+/sim
+/layer_dump.hex
+/stim_worst.hex
+validation_reports.csv
+helper/*_run.txt
+helper/sim/verilator_*.txt
+output_files/
+db/
+incremental_db/
+
+# results files:
+results/dut/
+results/roundtrip/
+results/roundtrip_imgs/
+obj/
+data_files/capture_geo_*.hex

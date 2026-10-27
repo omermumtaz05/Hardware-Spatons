@@ -1,0 +1,5 @@
+layer weight_scale weight_scale_fp32hex
+layer1 1.577570830306e-03 3acec67e
+layer2 1.469165145068e-02 3c70b541
+layer3 3.551398704663e-03 3b68be95
+residual 3.478375433009e-04 39b65df7

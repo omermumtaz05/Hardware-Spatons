@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Sat Oct 10 22:11:17 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : int_v4
+Top-level Entity Name : top_full_synth
+Family : Cyclone V
+Device : 5CEFA7F31I7
+Power Models : Final
+Total Thermal Power Dissipation : 713.39 mW
+Core Dynamic Thermal Power Dissipation : 352.16 mW
+Core Static Thermal Power Dissipation : 355.15 mW
+I/O Thermal Power Dissipation : 6.08 mW
+Power Estimation Confidence : High: user provided sufficient toggle rate data

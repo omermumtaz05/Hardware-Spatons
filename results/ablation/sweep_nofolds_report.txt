@@ -1,0 +1,31 @@
+10 rows: 10 OK, 0 failed
+
+cycles/frame: unique [np.int64(3998326)]  (data-independent if one value)
+
+              mean  median      p1     min   worst-max-LSB
+vs quant     43.89   43.90   42.96   42.92   10   (PSNR dB)
+          pooled-RMSE PSNR 43.85 dB, >2LSB mean 13.27%
+vs fp32      37.66   37.42   36.71   36.70   22   (PSNR dB)
+          pooled-RMSE PSNR 37.60 dB, >2LSB mean 36.30%
+
+worst 10 (vs fp32):
+  Places365_val_00020321         fp  36.70  q  42.92  max 19
+  Places365_val_00019843         fp  36.76  q  43.72  max 20
+  Places365_val_00013307         fp  37.22  q  43.37  max 18
+  Places365_val_00018487         fp  37.30  q  43.40  max 18
+  Places365_val_00019885         fp  37.33  q  43.48  max 18
+  Places365_val_00006977         fp  37.50  q  44.08  max 22
+  Places365_val_00009834         fp  38.04  q  44.20  max 20
+  Places365_val_00009576         fp  38.16  q  44.20  max 17
+  Places365_val_00013734         fp  38.55  q  44.28  max 20
+  Places365_val_00020157         fp  39.05  q  45.26  max 18
+
+requant points:  S  | worst need | margin | images clamped | total clamps
+  l1_RQ_ACC   11 |         10 |      1 |              0 | 0
+  l2_RQ_IN    10 |          9 |      1 |              0 | 0
+  l2_RQ_ACC    7 |          6 |      1 |              0 | 0
+  l3_RQ_IN     8 |          6 |      2 |              0 | 0
+  l3_RQ_ACC    8 |          7 |      1 |              0 | 0
+  res_RQ_ACC  12 |         12 |      0 |              0 | 0
+
+saved results/ablation/sweep_nofolds_report.png

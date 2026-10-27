@@ -1,0 +1,72 @@
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEFA7F31I7
+set_global_assignment -name TOP_LEVEL_ENTITY top_full_synth
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.1STD.0
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
+
+# ---- wrapper ----
+set_global_assignment -name SYSTEMVERILOG_FILE top_full_synth.sv
+
+# ---- geo stage (integer) ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/common/coord_gen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/LUT_fxp.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/csf_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/fetch_four_nearest_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/input_buffer_parity_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/bilinear_interp_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/geo/top_geo_int.sv
+
+# ---- shared ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/common/inter_line_buffer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/common/fifo_residual.sv
+
+# ---- photo stage (static requant) ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/dot_prod_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/neuron_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/layer_int_v2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/nn_pipelined_int_v4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/post_mlp_int.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/photo_stage_int_v4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/photo/patch_extractor_int.sv
+
+# ---- top ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/top_full_int_st.sv
+
+# ---- gate-level netlist for power sim ----
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Altera FPGA (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_MAP_ILLEGAL_CHARACTERS ON -section_id eda_simulation
+set_global_assignment -name EDA_WRITE_NODES_FOR_POWER_ESTIMATION ALL_NODES -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_DESIGN_INSTANCE_NAME tb/dut -section_id eda_simulation
+
+
+set_global_assignment -name SDC_FILE int_v4.sdc
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files/int_v4_80mhz
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+
+# ---- you have headroom on this part now: chase Fmax, not area ----
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name AUTO_RESOURCE_SHARING OFF
+set_global_assignment -name DSP_BLOCK_BALANCING AUTO
+set_global_assignment -name ALLOW_ANY_ROM_SIZE_FOR_RECOGNITION ON
+set_global_assignment -name ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION ON
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name POWER_USE_INPUT_FILES ON
+set_global_assignment -name POWER_INPUT_FILE_NAME simulation/questa/int_v4.vcd -section_id int_v4.vcd
+set_instance_assignment -name POWER_READ_INPUT_FILE int_v4.vcd -to top_full_synth
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 TRANSITIONS/S"
+set_global_assignment -name POWER_VCD_FILE_START_TIME "599668750 ps" -section_id int_v4.vcd
+set_global_assignment -name POWER_VCD_FILE_END_TIME "1224668750 ps" -section_id int_v4.vcd

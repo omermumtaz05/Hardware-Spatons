@@ -1,0 +1,4 @@
+name,status,cyc,sink_stall,sim_s,q_psnr,q_rmse,q_mean,q_max,q_gt2,q_exact,fp_psnr,fp_rmse,fp_mean,fp_max,fp_gt2,fp_exact,l1_RQ_ACC_S,l1_RQ_ACC_need,l1_RQ_ACC_clamps,l2_RQ_IN_S,l2_RQ_IN_need,l2_RQ_IN_clamps,l2_RQ_ACC_S,l2_RQ_ACC_need,l2_RQ_ACC_clamps,l3_RQ_IN_S,l3_RQ_IN_need,l3_RQ_IN_clamps,l3_RQ_ACC_S,l3_RQ_ACC_need,l3_RQ_ACC_clamps,res_RQ_ACC_S,res_RQ_ACC_need,res_RQ_ACC_clamps,sat0_dut,sat0_gold
+Places365_val_00034570,OK,2425426,65521,4.65,44.24,1.5651,1.037,9,11.885,42.647,37.5,3.4006,2.2154,19,34.738,34.299,11,10,0,10,9,0,7,6,0,8,6,0,8,7,0,12,11,0,24.492,24.409
+Places365_val_00000907,OK,2425426,65521,4.66,43.762,1.6537,1.1587,9,13.402,36.036,35.596,4.2339,2.9314,21,45.137,24.649,11,10,0,10,8,0,7,6,0,8,6,0,8,6,0,12,11,0,4.436,4.356
+Places365_val_00004111,OK,2425426,65521,4.76,47.29,1.1017,0.5185,9,5.904,71.223,42.721,1.8642,0.8985,20,15.007,67.12,11,10,0,10,9,0,7,6,0,8,6,0,8,7,0,12,12,0,11.576,11.547

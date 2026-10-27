@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Oct 16 11:00:44 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : geo_fp32
+Top-level Entity Name : geo_synth
+Family : Cyclone V
+Device : 5CEFA7F31I7
+Timing Models : Final
+Logic utilization (in ALMs) : 13,699 / 56,480 ( 24 % )
+Total registers : 589
+Total pins : 117 / 480 ( 24 % )
+Total virtual pins : 0
+Total block memory bits : 3,670,016 / 7,024,640 ( 52 % )
+Total RAM Blocks : 448 / 686 ( 65 % )
+Total DSP Blocks : 16 / 156 ( 10 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 7 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

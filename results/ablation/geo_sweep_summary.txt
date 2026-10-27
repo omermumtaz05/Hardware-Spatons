@@ -1,0 +1,25 @@
+[1/20] Places365_val_00009576  fp32_full: inf dB / max 0  fp32_q88: 69.832 dB / max 1  int_q88: 69.855 dB / max 1
+[2/20] Places365_val_00013734  fp32_full: 98.057 dB / max 1  fp32_q88: 68.674 dB / max 1  int_q88: 68.732 dB / max 1
+[3/20] Places365_val_00019885  fp32_full: inf dB / max 0  fp32_q88: 66.019 dB / max 1  int_q88: 65.953 dB / max 1
+[4/20] Places365_val_00019843  fp32_full: 94.077 dB / max 1  fp32_q88: 65.305 dB / max 1  int_q88: 65.303 dB / max 1
+[5/20] Places365_val_00020321  fp32_full: inf dB / max 0  fp32_q88: 69.596 dB / max 1  int_q88: 69.544 dB / max 1
+[6/20] Places365_val_00009834  fp32_full: 101.067 dB / max 1  fp32_q88: 66.014 dB / max 1  int_q88: 66.023 dB / max 1
+[7/20] Places365_val_00006977  fp32_full: 98.057 dB / max 1  fp32_q88: 67.559 dB / max 1  int_q88: 67.557 dB / max 1
+[8/20] Places365_val_00020157  fp32_full: 101.067 dB / max 1  fp32_q88: 70.525 dB / max 1  int_q88: 70.525 dB / max 1
+[9/20] Places365_val_00018487  fp32_full: 101.067 dB / max 1  fp32_q88: 69.113 dB / max 1  int_q88: 69.197 dB / max 1
+[10/20] Places365_val_00013307  fp32_full: inf dB / max 0  fp32_q88: 68.977 dB / max 1  int_q88: 68.966 dB / max 1
+[11/20] Places365_val_00004857  fp32_full: 101.067 dB / max 1  fp32_q88: 67.568 dB / max 1  int_q88: 67.59 dB / max 1
+[12/20] Places365_val_00027480  fp32_full: 88.762 dB / max 4  fp32_q88: 66.629 dB / max 1  int_q88: 66.597 dB / max 1
+[13/20] Places365_val_00036009  fp32_full: inf dB / max 0  fp32_q88: 67.119 dB / max 1  int_q88: 67.042 dB / max 1
+[14/20] Places365_val_00029584  fp32_full: inf dB / max 0  fp32_q88: 67.992 dB / max 1  int_q88: 67.971 dB / max 1
+[15/20] Places365_val_00022080  fp32_full: 101.067 dB / max 1  fp32_q88: 68.881 dB / max 1  int_q88: 68.866 dB / max 1
+[16/20] Places365_val_00019227  fp32_full: 101.067 dB / max 1  fp32_q88: 69.438 dB / max 1  int_q88: 69.388 dB / max 1
+[17/20] Places365_val_00005587  fp32_full: inf dB / max 0  fp32_q88: 68.379 dB / max 1  int_q88: 68.328 dB / max 1
+[18/20] Places365_val_00026621  fp32_full: inf dB / max 0  fp32_q88: 68.447 dB / max 1  int_q88: 68.447 dB / max 1
+[19/20] Places365_val_00000552  fp32_full: 101.067 dB / max 1  fp32_q88: 65.791 dB / max 1  int_q88: 65.779 dB / max 1
+[20/20] Places365_val_00018060  fp32_full: 101.067 dB / max 1  fp32_q88: 67.121 dB / max 1  int_q88: 67.17 dB / max 1
+
+20 images -> results/ablation/geo_sweep.csv   (vs software FP32 warp)
+  fp32_full : mean PSNR 98.96 dB, worst 88.76 dB, worst pixel 4 LSB, exact pixels 100.00%
+  fp32_q88  : mean PSNR 67.95 dB, worst 65.31 dB, worst pixel 1 LSB, exact pixels 98.90%
+  int_q88   : mean PSNR 67.94 dB, worst 65.30 dB, worst pixel 1 LSB, exact pixels 98.89%

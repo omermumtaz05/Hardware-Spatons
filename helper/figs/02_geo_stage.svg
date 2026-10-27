@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="510" viewBox="0 0 800 510" role="img">
+  <title>Geometric stage pipeline</title>
+  <desc>Datapath across three cycle columns with two register boundaries, plus the delay-matched coordinate and valid chain beneath it.</desc>
+
+  <style>
+    .t   { font: 500 14px 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #1a1a1a; }
+    .tr  { font: 400 14px 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #1a1a1a; }
+    .ts  { font: 400 12px 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #6b6b6b; }
+    .tsi { font: 400 12px 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #1a1a1a; }
+    .tm  { font: 400 12px 'SF Mono', Menlo, Consolas, monospace; fill: #6b6b6b; }
+    .tmi { font: 400 12px 'SF Mono', Menlo, Consolas, monospace; fill: #1a1a1a; }
+    .ttl { font: 500 16px 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #1a1a1a; }
+    .arr { stroke: #6b6b6b; stroke-width: 1; fill: none; }
+    .arrf{ stroke: #9a9a9a; stroke-width: 1; fill: none; stroke-dasharray: 4 3; }
+    .box { fill: #f6f6f4; stroke: #c4c4c4; stroke-width: 1; }
+    .dash{ fill: none; stroke: #9a9a9a; stroke-width: 1; stroke-dasharray: 5 4; }
+    .reg { stroke: #9a9a9a; stroke-width: 1; stroke-dasharray: 3 3; }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+<text class="ttl" x="40" y="40" text-anchor="start">Geometric stage &#8212; two registered cycles</text>
+<line class="reg" x1="250" y1="64" x2="250" y2="330"/>
+<line class="reg" x1="500" y1="64" x2="500" y2="330"/>
+<text class="ts" x="145" y="80" text-anchor="middle">cycle 0</text>
+<text class="ts" x="375" y="80" text-anchor="middle">cycle 1</text>
+<text class="ts" x="625" y="80" text-anchor="middle">cycle 2</text>
+<rect x="40" y="96" width="190" height="52" rx="4" fill="#dce7f5" stroke="#5f88c0" stroke-width="1"/>
+<text class="t" x="135.0" y="119.0" text-anchor="middle">coord_gen</text>
+<text class="ts" x="135.0" y="137.0" text-anchor="middle">x, y sweep</text>
+<rect x="268" y="96" width="200" height="52" rx="4" fill="#f8e7cd" stroke="#c9944a" stroke-width="1"/>
+<text class="t" x="368.0" y="119.0" text-anchor="middle">LUT_quant</text>
+<text class="ts" x="368.0" y="137.0" text-anchor="middle">registered read</text>
+<rect x="268" y="166" width="200" height="52" rx="4" fill="#dce7f5" stroke="#5f88c0" stroke-width="1"/>
+<text class="t" x="368.0" y="189.0" text-anchor="middle">coordsplit_format</text>
+<text class="ts" x="368.0" y="207.0" text-anchor="middle">x_int, dx</text>
+<rect x="268" y="236" width="200" height="52" rx="4" fill="#dce7f5" stroke="#5f88c0" stroke-width="1"/>
+<text class="t" x="368.0" y="259.0" text-anchor="middle">fetch_four_near</text>
+<text class="ts" x="368.0" y="277.0" text-anchor="middle">A00 &#8230; A11</text>
+<rect x="518" y="96" width="140" height="52" rx="4" fill="#f8e7cd" stroke="#c9944a" stroke-width="1"/>
+<text class="t" x="588.0" y="119.0" text-anchor="middle">input_buffer</text>
+<text class="ts" x="588.0" y="137.0" text-anchor="middle">4 parity banks</text>
+<rect x="518" y="166" width="140" height="52" rx="4" fill="#f8dcdc" stroke="#c47474" stroke-width="1"/>
+<text class="t" x="588.0" y="189.0" text-anchor="middle">bilinear_interp</text>
+<text class="ts" x="588.0" y="207.0" text-anchor="middle">combinational</text>
+<line class="arr" x1="230" y1="122" x2="264" y2="122" marker-end="url(#a)"/>
+<path class="arr" d="M368 148 V162" marker-end="url(#a)"/>
+<path class="arr" d="M368 218 V232" marker-end="url(#a)"/>
+<path class="arr" d="M468 262 H492 V122 H514" marker-end="url(#a)"/>
+<path class="arr" d="M588 148 V162" marker-end="url(#a)"/>
+<line class="arr" x1="658" y1="192" x2="690" y2="192" marker-end="url(#a)"/>
+<text class="tmi" x="694" y="196" text-anchor="start">P_out[3]</text>
+<rect class="dash" x="40" y="316" width="700" height="86" rx="4"/>
+<text class="ts" x="52" y="336" text-anchor="start">delay-matched control &#8212; must track the two register stages</text>
+<rect x="60" y="348" width="150" height="38" rx="4" fill="#f6f6f4" stroke="#c4c4c4" stroke-width="1"/>
+<text class="tmi" x="135.0" y="372.0" text-anchor="middle">x_ind, y_ind</text>
+<rect x="268" y="348" width="150" height="38" rx="4" fill="#f6f6f4" stroke="#c4c4c4" stroke-width="1"/>
+<text class="tmi" x="343.0" y="372.0" text-anchor="middle">_1</text>
+<rect x="518" y="348" width="150" height="38" rx="4" fill="#f6f6f4" stroke="#c4c4c4" stroke-width="1"/>
+<text class="tmi" x="593.0" y="372.0" text-anchor="middle">_2 &#8594; out_x/out_y</text>
+<line class="arr" x1="210" y1="367" x2="264" y2="367" marker-end="url(#a)"/>
+<line class="arr" x1="418" y1="367" x2="514" y2="367" marker-end="url(#a)"/>
+<text class="ts" x="40" y="428" text-anchor="start">valid_1 / valid_2 and row_last carry the same two-stage delay.</text>
+<text class="ts" x="40" y="446" text-anchor="start">stall gates every register above; the stage freezes as a unit.</text>
+<rect x="40" y="470" width="12" height="12" rx="2" fill="#f8e7cd" stroke="#c9944a" stroke-width="1"/>
+<text class="ts" x="58" y="480" text-anchor="start">registered</text>
+<rect x="210" y="470" width="12" height="12" rx="2" fill="#f8dcdc" stroke="#c47474" stroke-width="1"/>
+<text class="ts" x="228" y="480" text-anchor="start">critical path</text>
+<rect x="380" y="470" width="12" height="12" rx="2" fill="#dce7f5" stroke="#5f88c0" stroke-width="1"/>
+<text class="ts" x="398" y="480" text-anchor="start">combinational</text>
+
+</svg>

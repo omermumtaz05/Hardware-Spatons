@@ -1,0 +1,24 @@
+# 1. Go to project directory
+cd /mnt/c/Users/omerm/dev/Hardware-Spatons
+
+# 2. Remove old Verilator build
+rm -rf obj_dir
+
+# 3. Recompile testbench
+verilator --binary --timing -Wno-fatal \
+--top-module photo_pipeline_tb \
+-sv \
+helper/fp32_pkg.sv \
+rtl/photo_stage/output_buffer.sv \
+rtl/photo_stage/dot_prod_folded.sv \
+rtl/photo_stage/neuron_folded.sv \
+rtl/photo_stage/layer_folded.sv \
+rtl/photo_stage/fifo_residual.sv \
+rtl/photo_stage/nn_pipelined.sv \
+rtl/photo_stage/patch_extractor.sv \
+rtl/photo_stage/post_mlp.sv \
+rtl/photo_stage/photo_pipeline.sv \
+tb/photo_stage/photo_pipeline_tb.sv
+
+# 4. Run simulation
+./obj_dir/Vphoto_pipeline_tb

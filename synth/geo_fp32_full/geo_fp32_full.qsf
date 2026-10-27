@@ -1,0 +1,27 @@
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEFA7F31I7
+set_global_assignment -name TOP_LEVEL_ENTITY geo_synth
+set_global_assignment -name SDC_FILE geo_fp32_full.sdc
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name AUTO_RESOURCE_SHARING OFF
+set_global_assignment -name DSP_BLOCK_BALANCING AUTO
+set_global_assignment -name ALLOW_ANY_ROM_SIZE_FOR_RECOGNITION ON
+set_global_assignment -name ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION ON
+
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/pkg/fp32_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/pkg/fp32_conv_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE geo_synth.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/common/coord_gen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/geo_stage/coord-split-format.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/geo_stage/fetch_four_near.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/geo_stage/input_buffer_parity.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/ablation/fp32/geo_stage/bilinear_interp.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top_geo.sv
+set_global_assignment -name SYSTEMVERILOG_FILE LUT_geo.sv
+
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
